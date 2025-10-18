@@ -53,6 +53,5 @@ public class SecondLargest {
         int secondMax = findSecondMax(arr);
         System.out.println("Second Largest Element: "+secondMax);
 
-
     }
 }
