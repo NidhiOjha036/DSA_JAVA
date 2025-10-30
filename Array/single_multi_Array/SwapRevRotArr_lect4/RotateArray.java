@@ -23,6 +23,31 @@ public class RotateArray {
 
     }
 
+    static void rotateInPlace(int[] arr,int k)
+    {
+        int n = arr.length;
+        k = k%n;
+        reverseArrayInPlace(arr,0, n-k-1);
+        reverseArrayInPlace(arr,n-k, n-1);
+        reverseArrayInPlace(arr,0, n-1);
+
+    }
+
+    static void reverseArrayInPlace(int[] arr,int i, int j)
+    {
+        while (i<j) {
+            swapInArray(arr,i,j);
+            i++;
+            j--;
+        }
+    }
+
+    static void swapInArray(int[] arr, int i, int j)
+    {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 
     static void printArray(int[] arr)
     {
@@ -51,9 +76,11 @@ public class RotateArray {
         System.out.println("Original array");
         printArray(arr);
 
-        int[] ans = rotateArray(arr, k);
+        //int[] ans = rotateArray(arr, k);
+        rotateInPlace(arr, k);
         System.out.println("Array after rotation");
-        printArray(ans);
+       // printArray(ans);
+       printArray(arr);
 
     }
     
