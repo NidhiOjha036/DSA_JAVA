@@ -3,6 +3,28 @@ package Array.single_multi_Array.Pointers_lect5;
 import java.util.Scanner;
 
 public class SortArray {
+    
+    static void sortSquares(int[] arr)
+    {
+        int n = arr.length;
+        int left=0, right=n-1;
+        int[] ans = new int[n];
+        //int k=0;
+        int k=n-1;
+        while (left <= right) {
+            if(Math.abs(arr[left]) > Math.abs(arr[right]))
+            {
+                //ans[k++] = arr[left]*arr[left];
+                ans[k--] = arr[left]*arr[left];
+                left++;
+            }else{
+                ans[k--] = arr[right]*arr[right];
+                right--;
+            }
+        }
+        //reverseArrayInPlace(ans);
+        printArray(ans);
+    }
 
      static void sortArrayByParity(int[] arr)
      {
@@ -72,6 +94,17 @@ public class SortArray {
             }
         }
     }
+    static void reverseArrayInPlace(int[] arr)
+    {
+        int i=0; int j=arr.length-1;
+        while (i<j) {
+            swapInArray(arr,i,j);
+            i++;
+            j--;
+        }
+        printArray(arr);
+    }
+
 
     static void swapInArray(int[] arr, int i, int j)
     {
@@ -108,9 +141,11 @@ public class SortArray {
         // System.out.println("Sorted Array Using Pointers");
         // sortZeroesAndOnesPointers(arr);
 
-        System.out.println("Sorted Array By Parity");
-        sortArrayByParity(arr);
+        // System.out.println("Sorted Array By Parity");
+        // sortArrayByParity(arr);
        
+        System.out.println("Sorted Squares");
+        sortSquares(arr);
 
     }
     
