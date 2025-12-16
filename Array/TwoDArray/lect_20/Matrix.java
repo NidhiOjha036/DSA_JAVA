@@ -20,7 +20,7 @@ public class Matrix {
             {
                for(int k=0; k<c1; k++)
                {
-                    mul[i][j] = (a[i][k] * b[k][j]);
+                    mul[i][j] += (a[i][k] * b[k][j]);
                }
             }
         }
