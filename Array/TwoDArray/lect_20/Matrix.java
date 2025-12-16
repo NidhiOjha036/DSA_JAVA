@@ -4,6 +4,31 @@ import java.util.Scanner;
 
 public class Matrix {
 
+    static void multiply(int[][] a, int r1, int c1, int[][] b, int r2, int c2)
+    {
+
+        if(r2 != c1)
+        {
+            System.out.println("Multiplication not possible wrong dimension");
+            return;
+        }
+
+        int[][] mul = new int[r1][c2];
+        for(int i=0; i<r1; i++) // row number
+        {
+            for(int j=0; j<c2; j++) //col number
+            {
+               for(int k=0; k<c1; k++)
+               {
+                    mul[i][j] = (a[i][k] * b[k][j]);
+               }
+            }
+        }
+
+        System.out.println("Multiplication of two matrices");
+        printMatrix(mul);
+    }
+
 
     static void add(int[][] a, int r1, int c1, int[][] b, int r2, int c2)
     {
@@ -16,6 +41,7 @@ public class Matrix {
 
         int[][] sum = new int[r1][c1];
 
+        System.out.println("Sum of matrix 1 and matrix 2");
         for(int i=0; i<r1; i++)
         {
             for(int j=0; j<c1; j++)
@@ -79,8 +105,9 @@ public class Matrix {
         System.out.println("Matrix 2");
         printMatrix(b);
 
-        System.out.println("Sum of matrix 1 and matrix 2");
-        add(a, r1, c1, b, r2, c2);
+    
+       // add(a, r1, c1, b, r2, c2);
+       multiply(a, r1, c1, b, r2, c2);
 
     }
     
