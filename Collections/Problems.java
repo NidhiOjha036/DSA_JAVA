@@ -42,7 +42,8 @@ public class Problems {
         l1.add("Physics");
         l1.add("Wallah");
         System.out.println("Original List "+l1);
-        Collections.sort(l1);
+        //Collections.sort(l1); Sort Ascending Order
+        Collections.sort(l1, Collections.reverseOrder());
         System.out.println("Sorted "+l1);
 
 
