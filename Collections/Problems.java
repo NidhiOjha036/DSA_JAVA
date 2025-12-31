@@ -36,6 +36,17 @@ public class Problems {
         System.out.println("Reversed List "+list);
 
 
+        ArrayList<String> l1 = new ArrayList<>();
+        l1.add("Welcome");
+        l1.add("To");
+        l1.add("Physics");
+        l1.add("Wallah");
+        System.out.println("Original List "+l1);
+        Collections.sort(l1);
+        System.out.println("Sorted "+l1);
+
+
+
     }
     
 }
