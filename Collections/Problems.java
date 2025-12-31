@@ -1,6 +1,8 @@
 package Collections;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Problems {
 
@@ -29,7 +31,8 @@ public class Problems {
         list.add(10);
 
         System.out.println("Original List "+list);
-        reverseList(list);
+        //reverseList(list);
+        Collections.reverse(list);
         System.out.println("Reversed List "+list);
 
 
