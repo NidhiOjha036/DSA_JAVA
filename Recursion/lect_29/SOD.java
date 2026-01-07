@@ -1,5 +1,6 @@
 package Recursion.lect_29;
 
+//sum of digit
 public class SOD {
 
     static int sod(int n)
