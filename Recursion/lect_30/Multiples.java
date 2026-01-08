@@ -7,11 +7,12 @@ public class Multiples {
     static void printMultiples(int n, int k) // 5,4
     {
         //base case
-        if(k==1)
-        {
-            System.out.println(n);
-            return;
-        }
+        if(k==0) return;
+        // if(k==1)
+        // {
+        //     System.out.println(n);
+        //     return;
+        // }
 
         //recursive work
         printMultiples(n, k-1); // 5 10 5
