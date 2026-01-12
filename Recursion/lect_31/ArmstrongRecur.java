@@ -2,22 +2,38 @@ package Recursion.lect_31;
 
 public class ArmstrongRecur {
 
-    static int fact(int n)
-    {
-        if(n==0) return 1;
-        return n*fact(n-1);
-    }
+    // static int fact(int n)
+    // {
+    //     if(n==0) return 1;
+    //     return n*fact(n-1);
+    // }
 
-    static int armstrong(int n)
+    // static int strong(int n)
+    // {
+    //     if(n==0) return 0;
+    //     else return fact(n%10) + armstrong(n/10);
+    // }
+
+    static int countDigits(int n)
     {
         if(n==0) return 0;
-        else return fact(n%10) + armstrong(n/10);
+        return 1+countDigits(n/10);
     }
 
+     static int armstrongSum(int n, int digits) {
+        if (n == 0)
+            return 0;
+
+        int digit = n % 10;
+        return (int) Math.pow(digit, digits) + armstrongSum(n / 10, digits);
+    }
+
+
     public static void main(String[] args) {
-        int n = 145;
+        int n = 153;
         int temp = n;
-        if(armstrong(n)==temp)
+        int digits = countDigits(n);
+        if(armstrongSum(n,digits)==temp)
         {
             System.out.println(temp+" is a armstrong number");
         }else
