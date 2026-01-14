@@ -16,7 +16,7 @@ public class Search {
 
     }
 
-    //Return index if  x exists in the array.
+    //Return first index if  x exists in the array. //[1,2,2] 
     static int findIndex(int[] a, int target, int idx)
     {
         //base case
@@ -30,16 +30,36 @@ public class Search {
 
     } 
 
-    public static void main(String[] args) {
-        int[] arr = {1,2,4,6};
-        int target = 6;
-        if(search(arr, target, 0))
+    //Return all indices if  x exists in the array
+    static void findAllIndices(int[] a, int target, int idx)
+    {
+        //base case
+        if(idx >= a.length) return;
+
+        //self work
+        if(a[idx] == target)
         {
-            System.out.println("Yes");
-            System.out.println(findIndex(arr, target, 0));
-        }else{
-            System.out.println("No");
+            System.out.println(idx);
         }
+
+        //recursive work
+        findAllIndices(a, target, idx+1);
+
+    } 
+
+    public static void main(String[] args) {
+        int[] arr = {1,2,2,24,6};
+        int target = 2;
+
+        // if(search(arr, target, 0))
+        // {
+        //     System.out.println("Yes");
+        //     System.out.println("First Index "+findIndex(arr, target, 0));
+        // }else{
+        //     System.out.println("No");
+        // }
+
+       findAllIndices(arr, target, 0);
     }
     
 }
