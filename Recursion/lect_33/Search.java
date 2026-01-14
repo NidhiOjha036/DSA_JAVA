@@ -16,12 +16,27 @@ public class Search {
 
     }
 
+    //Return index if  x exists in the array.
+    static int findIndex(int[] a, int target, int idx)
+    {
+        //base case
+        if(idx >= a.length) return -1;
+
+        //self work
+        if(a[idx] == target) return idx;
+
+        //recursive work
+        return findIndex(a, target, idx+1);
+
+    } 
+
     public static void main(String[] args) {
         int[] arr = {1,2,4,6};
-        int target = 5;
+        int target = 6;
         if(search(arr, target, 0))
         {
             System.out.println("Yes");
+            System.out.println(findIndex(arr, target, 0));
         }else{
             System.out.println("No");
         }
