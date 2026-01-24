@@ -16,9 +16,13 @@ public class SelectionSort {
                 }
             }
 
-            int temp = arr[i];
-            arr[i] = arr[min_ind];
-            arr[min_ind] = temp;
+            if(min_ind != i)
+            {
+                int temp = arr[i];
+                arr[i] = arr[min_ind];
+                arr[min_ind] = temp;
+            }
+            
 
         }
     }
