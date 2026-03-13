@@ -1,4 +1,4 @@
-package Recursion.lect_37;
+package Sorting.lect_37;
 
 //Sort the names of fruits in lexicographical order.
 public class SortFruits {

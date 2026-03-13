@@ -1,4 +1,4 @@
-package Recursion.lect_37;
+package Sorting.lect_37;
 
 //Move all 0’s to end, maintaining the relative order.
 public class MoveZeroesToEnd {

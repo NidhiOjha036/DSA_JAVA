@@ -21,6 +21,6 @@ public class keypadCombinations {
     public static void main(String[] args) {
         String s = "23";
         String[] kp = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-        combination(s, kp, s);
+        combination(s, kp, "");
     }
 }
