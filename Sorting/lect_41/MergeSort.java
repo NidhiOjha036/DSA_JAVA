@@ -31,7 +31,7 @@ public class MergeSort {
         
         while(i<left.length && j<right.length)
         {
-            if(left[i]<right[j]) ans[k++] = left[i++];
+            if(left[i]<=right[j]) ans[k++] = left[i++];
             else ans[k++] = right[j++];
         }
 
@@ -64,7 +64,7 @@ public class MergeSort {
     //     int n1 = mid-l+1;
     //     int n2 = r-mid;
     //     int[] left = new int[n1];
-    //     int[] right = new int[n1];
+    //     int[] right = new int[n2];
 
     //     for(int i=0; i<n1; i++) left[i] = arr[l+i];
     //     for(int j=0; j<n2; j++) right[j] = arr[mid+1+j];
