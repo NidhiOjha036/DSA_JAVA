@@ -5,7 +5,7 @@ public class BinarySearch {
     static boolean recursiveBinarySearch(int[] a, int st, int end, int target)
     {
         if(st>end) return false;
-        int mid = (st+end)/2;
+        int mid = st+(end-st)/2;
         if(target == a[mid]) return true;
         else if(target<a[mid]) return recursiveBinarySearch(a,st,mid-1,target);
         else return recursiveBinarySearch(a,mid+1,end,target);
@@ -17,7 +17,7 @@ public class BinarySearch {
         int st = 0, end = n-1;
 
         while (st<=end) {
-           int mid = (st+end)/2;
+            int mid = st+(end-st)/2;
            if(target == a[mid]) return true;
            else if(target<a[mid]) end = mid-1;
            else st = mid+1;
