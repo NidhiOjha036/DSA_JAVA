@@ -1,5 +1,6 @@
 package Sorting.lect_46;
 
+//Find the index of minimum element in array.
 public class FindMin {
 
     static int findMinimum(int[] a)
