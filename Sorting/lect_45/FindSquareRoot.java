@@ -11,8 +11,8 @@ public class FindSquareRoot {
         {
             int mid = st+(end-st)/2;
             int val = mid*mid;
-            if(val==x) return mid;
-            else if(val<x)
+            if(val==x/mid) return mid;
+            else if(val<x/mid)
             {
                 ans = mid;
                 st = mid+1;

@@ -5,7 +5,7 @@ public class PeakIndexMountainArray {
     static int peakIndex(int[] a)
     {
         int n = a.length;
-        int st=1, end = n-2;
+        int st=1, end = n-2; //first and last element cannot be peak
 
         while(st<=end)
         {
