@@ -11,7 +11,7 @@ public class FindMin {
         while(st<=end)
         {
             int mid = st+(end-st)/2;
-            if(a[mid]<=a[n-1])
+            if(a[mid]<=a[n])
             {
                 ans = mid;
                 end=mid-1;
