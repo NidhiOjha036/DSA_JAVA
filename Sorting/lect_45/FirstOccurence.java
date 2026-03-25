@@ -33,7 +33,7 @@ public class FirstOccurence {
                 st = mid+1;
             }
             else if(x<a[mid]) end = mid-1;
-            else st = mid+1;
+            else st = mid+1; //x>a[mid]
         }
         return lo;
     }
