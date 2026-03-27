@@ -11,6 +11,8 @@ public class Builder {
         System.out.println(str); //mello10
         str.insert(2, 'y');
         System.out.println(str); //meyllo10
+        str.reverse();
+        System.out.println(str);
 
     }
     
