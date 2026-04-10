@@ -30,6 +30,5 @@ public class ToggleString {
 
         }
         System.out.println(str); //pHysIcs
-
     }
 }
