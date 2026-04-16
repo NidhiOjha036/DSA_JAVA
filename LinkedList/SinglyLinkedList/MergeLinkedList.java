@@ -1,6 +1,6 @@
-package LinkedList;
+package LinkedList.SinglyLinkedList;
 
-import LinkedList.LinkedListCycle.ListNode;
+import LinkedList.SinglyLinkedList.LinkedListCycle.ListNode;
 
 public class MergeLinkedList {
 
