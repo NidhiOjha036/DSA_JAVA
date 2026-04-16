@@ -14,7 +14,7 @@ public class PalindromeDDL {
         }
     }
 
-     public static void display(Node head)
+    public static void display(Node head)
     {
         Node temp = head;
         while(temp != null)
