@@ -17,20 +17,10 @@ public class MiddleElement {
         Node slow = head;
         Node fast = head;
 
-        //self tried...
-        // // fast = 2x speed of slow
-        // fast = fast.next.next;
-
-        // while(fast != null)
-        // {
-        //     slow = slow.next;
-        //     fast = fast.next.next;
-        // }
-
-        // return slow;
+    
 
         //fast.next.next != null -> for even number of nodes -- Middle Element: 4
-        // while(fast != null && fast.next.next !=null)
+        // while(fast.next != null && fast.next.next !=null)
         // {
         //     slow = slow.next;
         //     fast = fast.next.next;
@@ -46,6 +36,49 @@ public class MiddleElement {
         }
         return slow; //Middle Element: 5
     }
+
+    //right middle
+    static Node deleteMiddle(Node head)
+    {
+        if(head.next == null) return null;
+        Node slow = head;
+        Node fast = head;
+
+        while(fast.next.next != null && fast.next.next.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        slow.next = slow.next.next;
+        return head;
+    }
+
+    static Node deleteLeftMiddle(Node head)
+    {
+        if(head.next == null) return null;
+        Node slow = head;
+        Node fast = head;
+
+        while(fast.next.next.next != null && fast.next.next.next.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        slow.next = slow.next.next;
+        return head;
+    }
+
+    static void display(Node head)
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
 
     public static void main(String[] args) {
 
@@ -64,6 +97,13 @@ public class MiddleElement {
 
         Node middleNode = findMiddleElement(a);
         System.out.println("Middle Element: "+middleNode.data);
+
+        // Node newNode = deleteMiddle(a); //100 13 4 12 10 
+        // display(newNode);
+
+         Node newNode = deleteLeftMiddle(a); //100 13 5 12 10 
+        display(newNode);
+
 
 
     }
