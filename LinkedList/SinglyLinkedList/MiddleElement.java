@@ -37,7 +37,7 @@ public class MiddleElement {
         return slow; //Middle Element: 5
     }
 
-    //right middle
+    //right middle - fast.next.next != null
     static Node deleteMiddle(Node head)
     {
         if(head.next == null) return null;
@@ -53,6 +53,7 @@ public class MiddleElement {
         return head;
     }
 
+    //left middle = fast.next.next.next.next
     static Node deleteLeftMiddle(Node head)
     {
         if(head.next == null) return null;
