@@ -46,6 +46,29 @@ public class DisplayReverse {
         st.push(top);
     }
 
+    static void pushAtIndex(Stack<Integer> st, int val, int idx) {
+    if (idx < 0 || idx > st.size()) {
+        System.out.println("Invalid Index");
+        return;
+    }
+
+    // Convert bottom index → top index
+    int target = st.size() - idx;
+
+    insertFromTop(st, val, target);
+   }
+
+static void insertFromTop(Stack<Integer> st, int val, int idx) {
+    if (idx == 0) {
+        st.push(val);
+        return;
+    }
+
+    int top = st.pop();
+    insertFromTop(st, val, idx - 1);
+    st.push(top);
+}
+
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
         st.push(1);
@@ -54,11 +77,13 @@ public class DisplayReverse {
         st.push(4);
         st.push(5);
         System.out.println(st);
-        displayRec(st);
-        System.out.println();
+        //displayRec(st);
+        //System.out.println();
         // displayRecReverse(st);
        // pushBottom(st, 6);
 
-        popBottom(st);
+        //popBottom(st);
+        pushAtIndex(st, 7, 1);
+        System.out.println(st);
     }
 }
