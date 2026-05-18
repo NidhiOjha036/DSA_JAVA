@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class NextGreaterElement {
 
+    //backward travesing
     static int[] nextGreaterEle(int[] arr)
     {
         int n = arr.length;
@@ -22,11 +23,39 @@ public class NextGreaterElement {
         }
         return res;
     }
+
+    static int[] greater(int[] arr)
+    {
+    int n = arr.length;
+    int[] ans = new int[n];
+
+    Stack<Integer> st = new Stack<>();
+
+    for(int i = 0; i < n; i++)
+    {
+        while(st.size() > 0 && arr[st.peek()] < arr[i])
+        {
+            ans[st.peek()] = arr[i];
+            st.pop();
+        }
+
+        st.push(i);
+    }
+
+    // remaining elements have no greater element
+    while(st.size() > 0)
+    {
+        ans[st.peek()] = -1;
+        st.pop();
+    }
+
+    return ans;
+    }
+
     public static void main(String[] args) {
 
-        int[] arr = {1,3,2,1,8,6,3,4};
-        //int[] res = new int[arr.length];
-        int[] res = nextGreaterEle(arr);
+        //int[] arr = {1,3,2,1,8,6,3,4};
+        //int[] res = nextGreaterEle(arr);
 
 
         // for(int i=0; i<arr.length; i++)
@@ -41,6 +70,10 @@ public class NextGreaterElement {
         //         }
         //     }
         // }
+
+        int[] arr = {1, 3, 2, 4};
+        int[] res = greater(arr);
+       // int[] res = nextGreaterEle(arr);
 
         for(int i=0; i<arr.length; i++)
         {
