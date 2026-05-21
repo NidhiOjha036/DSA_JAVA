@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class PrefixToPostfix {
     public static void main(String[] args) {
-        String str = "-9/*+5346";
+        String str = "-9/*+5346"; //prefix
         Stack<String> val = new Stack<>();
         for(int i=str.length()-1; i>=0; i--)
         {
@@ -22,6 +22,6 @@ public class PrefixToPostfix {
                 val.push(s);
             }
         }
-        System.out.println(val.peek());
+        System.out.println(val.peek()); // 953+4*6/-     -> postfix
     }
 }
