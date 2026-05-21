@@ -75,9 +75,9 @@ public class InfixToPostfix {
             val.push(t);
         }
 
-        String prefix = val.pop();
+        String postfix = val.pop();
         System.out.println(infix);
-        System.out.println(prefix);
+        System.out.println(postfix);
 
     }
 }
