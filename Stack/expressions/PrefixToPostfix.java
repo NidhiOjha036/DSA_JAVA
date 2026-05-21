@@ -13,12 +13,11 @@ public class PrefixToPostfix {
 
             if(ascii >= 48 && ascii <= 57)
             {
-                String s = ""+(ascii - 48);
-                val.push(s);
+                val.push(ch+"");
             }else{
                 String v1 = val.pop();
                 String v2 = val.pop();
-                String s = ""+v1+v2+ch;
+                String s = v1+v2+ch; //here ch is operator
                 val.push(s);
             }
         }
