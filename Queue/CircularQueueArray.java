@@ -113,5 +113,5 @@ public class CircularQueueArray {
         System.out.println(cq.peek()); //2
         System.out.println(cq.isEmpty()); //false
         //cq.add(7);  // Exception: Queue is full
-   } 
+   }
 }
