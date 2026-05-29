@@ -14,21 +14,23 @@ public class ReverseKQueue {
         q.add(5);
         System.out.println(q);
         int k = 3;
+        
         Stack<Integer> st = new Stack<>();
-        while(q.size()>=k)
-        {
+        // Step 1: Push first k elements into stack
+        for(int i = 0; i < k; i++) {
             st.push(q.remove());
         }
-        //System.out.println(q);
-        while(st.size()>0)
-        {
+
+        while(!st.isEmpty()) {
             q.add(st.pop());
         }
-        //System.out.println(q);
-        for(int i=1; i<=q.size()-k; i++)
-        {
+        
+        // Step 3: Move remaining elements to back
+        int size = q.size();
+        for(int i = 0; i < size - k; i++) {
             q.add(q.remove());
         }
+
         System.out.println(q);
     }
 }
