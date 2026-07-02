@@ -13,7 +13,7 @@ public class printPath {
        print(sr+1, sc, er, ec, s+"D");
         //go right way
        print(sr, sc+1, er, ec, s+"R");
-
+       
     }
     public static void main(String[] args) {
         int rows = 3;
